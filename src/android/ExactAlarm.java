@@ -3,7 +3,7 @@ package org.apache.cordova.exactalarm;
 import android.app.AlarmManager;
 import android.os.Build;
 import android.content.Context;
-import android.util.Log; 
+import android.util.Log;
 import org.apache.cordova.*;
 import org.json.JSONArray;
 
@@ -30,5 +30,5 @@ public class ExactAlarm extends CordovaPlugin {
         }
         return false;
     }
-    
+
 }
