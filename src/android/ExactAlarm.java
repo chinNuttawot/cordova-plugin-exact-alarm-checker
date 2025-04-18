@@ -9,9 +9,9 @@ import org.json.JSONArray;
 
 public class ExactAlarm extends CordovaPlugin {
     @Override
-    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) {
+    public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) {
         Log.d("ExactAlarm", "Action: " + action);
-        if ("checkPermission".equals(action)) {
+        if (action.equals("checkPermission")) {
             try {
                 Context context = this.cordova.getActivity().getApplicationContext();
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
