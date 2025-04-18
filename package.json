@@ -1,0 +1,13 @@
+{
+    "name": "cordova-plugin-exact-alarm-checker",
+    "version": "1.0.0",
+    "description": "Cordova plugin to check SCHEDULE_EXACT_ALARM permission on Android 12+",
+    "cordova": {
+      "id": "cordova-plugin-exact-alarm-checker",
+      "platforms": ["android"]
+    },
+    "keywords": ["cordova", "alarm", "android", "exact", "permission"],
+    "author": "Chin Nuttawot",
+    "license": "MIT"
+  }
+  
