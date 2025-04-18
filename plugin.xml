@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin id="cordova-plugin-exact-alarm-checker" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+  <name>Exact Alarm Checker</name>
+  <js-module src="www/ExactAlarm.js" name="ExactAlarm">
+    <clobbers target="cordova.plugins.ExactAlarm" />
+  </js-module>
+
+  <platform name="android">
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    </config-file>
+    <source-file src="src/android/ExactAlarm.java" target-dir="src/com/example/exactalarm" />
+  </platform>
+</plugin>
