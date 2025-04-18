@@ -1,17 +1,19 @@
 package org.apache.cordova.exactalarm;
 
 import android.app.AlarmManager;
-import android.os.Build;
 import android.content.Context;
-import android.util.Log;
-import org.apache.cordova.*;
+import android.os.Build;
+import android.util.Log; // อย่าลืม import นี้ถ้าใช้ Log
+
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CallbackContext;
+
 import org.json.JSONArray;
 
 public class ExactAlarm extends CordovaPlugin {
     @Override
-    public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) {
-        Log.d("ExactAlarm", "Action: " + action);
-        if (action.equals("checkPermission")) {
+    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) {
+        if ("checkPermission".equals(action)) {
             try {
                 Context context = this.cordova.getActivity().getApplicationContext();
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
@@ -20,15 +22,15 @@ public class ExactAlarm extends CordovaPlugin {
                     Log.d("ExactAlarm", "Allowed: " + allowed);
                     callbackContext.success(allowed ? 1 : 0);
                 } else {
-                    callbackContext.success(1); // always true < Android 12
+                    callbackContext.success(1); // ต่ำกว่า Android 12 ถือว่า "อนุญาต" โดยไม่ต้องขอ
                 }
             } catch (Exception e) {
                 Log.e("ExactAlarm", "Error checking permission", e);
-                callbackContext.error("Java error: " + e.getMessage());
+                callbackContext.error("Exception: " + e.getMessage());
             }
             return true;
         }
         return false;
     }
-
 }
+
