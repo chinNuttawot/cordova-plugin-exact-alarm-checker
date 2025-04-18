@@ -1,4 +1,4 @@
-package com.example.exactalarm;
+package org.apache.cordova.exactalarm;
 
 import android.app.AlarmManager;
 import android.os.Build;

@@ -9,6 +9,6 @@
     <config-file target="AndroidManifest.xml" parent="/*">
       <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     </config-file>
-    <source-file src="src/android/ExactAlarm.java" target-dir="src/com/example/exactalarm" />
+    <source-file src="src/android/ExactAlarm.java" target-dir="src/org/apache/cordova/exactalarm" />
   </platform>
 </plugin>
